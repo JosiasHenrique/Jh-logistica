@@ -1,58 +1,65 @@
-import { Container, Transport, HeaderTransport, Fuel } from './style';
-import { Card, CardContent, Divider, Grid } from '@mui/material';
+import { Container, Transport, HeaderTransport, Search } from './style';
+import { Button, Card, CardContent, Divider, TextField } from '@mui/material';
 import logo from '../../assets/img/logo-jh-white.svg';
+import { useEffect, useState } from 'react';
+import { BASE_URL } from "../../services/api";
+import axios from 'axios';
+import TuneIcon from '@mui/icons-material/Tune';
+import { useForm } from 'react-hook-form';
 
 export default function Dashboard() {
+    const [initDate, setInitDate] = useState('');
+    const [finalDate, setFinalDate] = useState('');
+    const [transport, setTransport] = useState();
+    const { register, handleSubmit } = useForm();
+
+    useEffect(() => {
+        axios.get(`${BASE_URL}/transports?initDate=${initDate}&finalDate=${finalDate}`).then(response => {
+            setTransport(response.data);
+        });
+    }, [initDate, finalDate]);
+
+    async function handleSearch(data) {
+        setInitDate(data.initdata);
+        setFinalDate(data.finaldata);
+    }
+
     return (
         <Container>
             <nav>
                 <img src={logo} width={60} alt="logo" />
             </nav>
-            <Transport>
-                <Card>
-                    <CardContent>
-                        <HeaderTransport>
-                            <h3>Transporte de batata para Potatoes's Chips</h3>
-                            <p>Em andamento</p>
-                            <span>27/05/2022</span>
-                        </HeaderTransport>
-                        <Divider />
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} md={6}>
-                                <ul>
-                                    <li>Transporte por Josias Henrique no veículo Iveco placa ghb-4578</li>
-                                    <li>Saída: Vargem Grande do Sul - SP</li>
-                                    <li>Destino: Curitiba - PR</li>
-                                    <li>Valor: R$15.000,00</li>
-                                </ul>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <ul>
-                                    <li>Km percorrido: 4521254</li>
-                                    <li>Gastos com combustível: R$2.452,00</li>
-                                    <li>Média do veículo: 2,30</li>
-                                    <li>Lucro liquído: R$13.053,00</li>
-                                </ul>
-                            </Grid>
-                            <Grid item xs={12}>
-
-                                <Card>
-                                    <CardContent>
-                                        <Fuel>
-                                            <p>Posto de combustivel X</p>
-                                            <p>235L</p>
-                                            <p>458784Km</p>
-                                            <p>R$563,23</p>
-                                            <p>12/02/2022</p>
-                                        </Fuel>
-                                    </CardContent>
-                                </Card>
-
-                            </Grid>
-                        </Grid>
-                    </CardContent>
-                </Card>
-            </Transport>
+            <Search onSubmit={handleSubmit(handleSearch)}>
+                <TextField label="Data inicial" type="date" name='initdata' color="secondary" InputLabelProps={{
+                    shrink: true,
+                }} sx={{ margin: '3px' }}  {...register("initdata")} />
+                <TextField label="Data final" type="date" name='finaldata' color="secondary" InputLabelProps={{
+                    shrink: true,
+                }} sx={{ margin: '3px' }} {...register("finaldata")} />
+                <Button type="submit" variant="contained" endIcon={<TuneIcon />}>Filtrar</Button>
+            </Search>
+            {transport? 
+            transport?.map(x => (
+                <Transport key={x.id}>
+                    <Card>
+                        <CardContent>
+                            <HeaderTransport>
+                                <h3>{x.title}</h3>
+                                <p>{x.status}</p>
+                                <span>{x.date}</span>
+                            </HeaderTransport>
+                            <Divider />
+                            <ul>
+                                <li>Transporte por <strong>{x.truck.driver.nome}</strong> no veículo <strong>{x.truck.model}</strong> placa <strong>{x.truck.plate}</strong></li>
+                                <li>Saída: <strong>{x.start}</strong></li>
+                                <li>Destino: <strong>{x.destination}</strong></li>
+                                <li>Valor: <strong>{x.amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</strong></li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </Transport>
+            )) : <h1>Nenhum registro para mostrar</h1>
+        }
         </Container>
     );
 }

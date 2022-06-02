@@ -2,12 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #f8f9fa;
+  height: 100vh;
+  
+  h1 {
+    text-align: center;
+    color: #ced4da;
+    letter-spacing: 2px;
+  }
 
   nav {
     background: rgb(86,11,173);
     background: linear-gradient(118deg, rgba(86,11,173,1) 0%, rgba(67,97,238,1) 100%);
-    padding-left: 40px;
     margin-bottom: 50px;
+    text-align: center;
   }
 
 `;
@@ -60,13 +67,26 @@ export const HeaderTransport = styled.div`
     }
 `;
 
-
-
-export const Fuel = styled.div`
+export const Search = styled.form`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #7209b7;
+    justify-content: center;
+    align-items: center ;
+    margin: 90px 0px 50px 0px;
     flex-wrap: wrap;
+
+   button {
+    color: #fff;
+      background: rgb(86,11,173);
+      background: linear-gradient(118deg, rgba(86,11,173,1) 0%, rgba(67,97,238,1) 100%);
+      padding: 8px;
+      font-weight: bold;
+   }
+
+   @media screen and (max-width: 600px) {
+   flex-direction: column;
+  
+  }
 `;
+
+
