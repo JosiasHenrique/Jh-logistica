@@ -13,16 +13,16 @@ export default function CardResume({ amount, totalKm, media }) {
             <Card>
                 <CardContent>
                     <span>Km percorrido</span>
-                    <h4> {totalKm === 0 ? "sem registro"  : `${totalKm}km`}</h4>
+                    <h4> {totalKm === 0 ? "sem registro" : `${totalKm}km`}</h4>
                 </CardContent>
             </Card>
             <Card>
                 <CardContent>
                     <span>Média (L/Km)</span>
-                    <h4> {media === 0 ? "sem registro"  : Math.round(media)}</h4>
+                    <h4> {media === 0 ? "sem registro" : Math.round(media)}</h4>
                 </CardContent>
             </Card>
-           
+
         </Resume>
     )
 }

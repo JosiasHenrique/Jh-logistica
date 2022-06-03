@@ -1,7 +1,7 @@
 import { Card, CardContent, Divider } from "@mui/material";
 import { HeaderTransport } from '../../pages/Dashboard/style';
 
-export default function CardTransport({data}) {
+export default function CardTransport({ data }) {
     return (
         <Card>
             <CardContent>

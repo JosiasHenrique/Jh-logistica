@@ -13,53 +13,53 @@ export const Container = styled.div`
    padding-top: 10px;
 
    h1 {
-       margin-top: 100px;
-       font-size: 60px;
+      margin-top: 100px;
+      font-size: 60px;
    }
 
    p {
-       margin-top: 10px;
-       font-size: 20px;
-       word-spacing: 3px;
+      margin-top: 10px;
+      font-size: 20px;
+      word-spacing: 3px;
    }
 
    button {
-       margin-top: 20px;
-       padding: 10px;
-       font-weight: bold;
-       letter-spacing: 2px;
-       width: 200px;
-       background: #fb8500;
-       border-radius: 20px;
+      margin-top: 20px;
+      padding: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      width: 200px;
+      background: #fb8500;
+      border-radius: 20px;
    }
 
    button:hover {
-    background: #fb8500;
+      background: #fb8500;
    }
 
    a {
-       text-decoration: none;
+      text-decoration: none;
    }
    
-@media screen and (max-width: 600px) {
-    padding-left: 20px;
-    padding-top: 10px;
+   @media screen and (max-width: 600px) {
+      padding-left: 20px;
+      padding-top: 10px;
     
-    h1 {
-       margin-top: 30px;
-       font-size: 40px;
-   }
+      h1 {
+        margin-top: 30px;
+        font-size: 40px;
+      }
 
-   p {
-       margin-top: 10px;
-       font-size: 17px;
-       word-spacing: 3px;
-       margin-right: 10px;
-   }
+      p {
+        margin-top: 10px;
+        font-size: 17px;
+        word-spacing: 3px;
+        margin-right: 10px;
+      }
 
-   button {
-       padding: 5px;
-       width: 150px;
-   }
+      button {
+        padding: 5px;
+        width: 150px;
+      }
 }
 `;
