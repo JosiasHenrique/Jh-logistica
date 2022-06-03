@@ -3,7 +3,7 @@ import logo from '../../assets/img/logo-jh.svg';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-export default function Page() {
+export default function Principal() {
     return (
         <Container>
             <img src={logo} width={80} alt="logo" />

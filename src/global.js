@@ -17,7 +17,7 @@ export default createGlobalStyle`
 
   body {
       font: 14px 'Roboto', sans-serif;
-      background: #ecf1f8;
+      background: #f8f9fa;
       color: #333;
   }
 

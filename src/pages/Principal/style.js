@@ -40,7 +40,6 @@ export const Container = styled.div`
    a {
        text-decoration: none;
    }
-
    
 @media screen and (max-width: 600px) {
     padding-left: 20px;
