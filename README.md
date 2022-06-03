@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Jh Logística 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/JosiasHenrique/Jh-logistica/blob/main/LICENCE) 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sobre o projeto
 
-## Available Scripts
+https://resilient-stroopwafel-6d4058.netlify.app
 
-In the project directory, you can run:
 
-### `npm start`
+Jh Logística é uma aplicação desenvolvida com referências de um emprego passado no qual não tinha ligações com tecnologia, o gerenciamento era feito apenas com planilhas e papéis. Minha intenção com esse projeto é mostrar os conhecimentos que adquiri com cursos técnicos, online e bootcamps, como forma de automatizar os processos de controle que me eram desempenhados no antigo trabalho.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A aplicação consiste em um filtro de datas que retorna as viagens com informações sobre para quem foi feito o transporte, motorista e veículo utilizado, saída, destino, data, valor e status além de gerar o valor bruto, km percorrido e média por litro de combustível efetuado pelo veículo durante o período.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Layout mobile
+![Mobile 1](https://github.com/JosiasHenrique/Jh-logistica/blob/main/src/assets/img/mobile.png) 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Layout web
+![Web 1](https://github.com/JosiasHenrique/Jh-logistica/blob/main/src/assets/img/desktop.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Tecnologias utilizadas
+## Back end
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+## Front end
+- HTML / CSS / JS 
+- ReactJS
+- Material UI
+- Styled Components
+## Implantação em produção
+- Back end: Heroku
+- Front end web: Netlify
+- Banco de dados: Postgresql
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Como executar o projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Back end
+Pré-requisitos: Java 17
 
-### `npm run eject`
+```bash
+# clonar repositório
+git clone https://github.com/JosiasHenrique/api-jhlogistica
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# entrar na pasta do projeto back end
+cd jhlogistica
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# executar o projeto
+./mvnw spring-boot:run
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Front end web
+Pré-requisitos: npm / yarn
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# clonar repositório
+git clone https://github.com/JosiasHenrique/Jh-logistica
 
-## Learn More
+# entrar na pasta do projeto front end web
+cd frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# instalar dependências
+yarn install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# executar o projeto
+yarn start
+```
 
-### Code Splitting
+# Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Josias Henrique
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://www.linkedin.com/in/josias-henrique-5a770318b
